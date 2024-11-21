@@ -15,10 +15,14 @@
 
 # print(ans)
 
-a = 1
-b = 0
+# a = 1
+# b = 0
 
-if b:
-    print("b")
-if a:
-    print("a")
+# if b:
+#     print("b")
+# if a: 
+#     print("a")
+import math
+llee = [3,4,5]
+print(sum(llee))
+print(max(llee))
