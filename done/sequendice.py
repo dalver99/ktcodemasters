@@ -1,5 +1,9 @@
 import sys 
 
+def max_indices(lst):
+    max_val = max(lst) # find the maximum value
+    return [i for i, j in enumerate(lst) if j == max_val] # return the indices of maximum value
+
 N = int(sys.stdin.readline().strip()) 
 numlist = list(map(int,sys.stdin.readline().strip().split())) 
 
@@ -19,13 +23,15 @@ for k in range (1,N):
     # k+T
     
     ev = 0
-    for t in range(0,16):
-        tempnumlist = numlist.copy()
-        for x in range (0,16):
-            tempnumlist[x+n-1] += x+3
-        ev += probs[t] * tempnumlist[t+n-1]
-        
-    #sprint(tempnumlist)
+    for t in range(16):
+        ev += probs[t] * (numlist[t + n - 1])
+
     expected.append(ev)
     
 print(expected)
+indices = max_indices(expected)
+
+#print(indices)
+list2 = list(map(lambda x: x + 1, indices))
+print(expected[list2[0]-1])
+print(' '.join(map(str, list2)))
