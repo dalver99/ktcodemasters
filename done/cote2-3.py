@@ -1,5 +1,3 @@
-
-
 directions = [1,2,3]
 board= [[1][2]]
 x=1
